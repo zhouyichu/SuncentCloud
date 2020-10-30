@@ -1,0 +1,17 @@
+17:48:38.038 [main] INFO  com.suncent.sso.SSOApplication - Starting SSOApplication on CY-20160101AZON with PID 10972 (D:\WorkSpace\suncent-sso\target\classes started by Administrator in D:\WorkSpace\suncent-sso)
+17:48:38.042 [main] INFO  com.suncent.sso.SSOApplication - The following profiles are active: dev
+17:48:39.117 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:48:39.128 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:48:39.128 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+17:48:39.275 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-sso] - Initializing Spring embedded WebApplicationContext
+17:48:39.367 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+17:48:39.621 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:48:40.098 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:48:40.124 [main] INFO  com.suncent.sso.SSOApplication - Started SSOApplication in 2.49 seconds (JVM running for 2.977)
+17:48:44.383 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-sso] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:48:44.429 [http-nio-8080-exec-2] INFO  com.suncent.sso.controller.UserController - Batch insert user>>>
+17:48:44.431 [http-nio-8080-exec-2] INFO  com.suncent.sso.utils.ExcelReader - 读取Excel数据》》》
+17:48:44.898 [http-nio-8080-exec-2] INFO  com.suncent.sso.utils.ExcelReader - Sheet页：Sheet1读取完毕，共加载有效数据160条！
+17:48:44.898 [http-nio-8080-exec-2] ERROR com.suncent.sso.utils.ExcelReader - Sheet页：Sheet2无数据！
+17:48:44.898 [http-nio-8080-exec-2] ERROR com.suncent.sso.utils.ExcelReader - Sheet页：Sheet3无数据！
+17:48:45.200 [http-nio-8080-exec-2] INFO  com.suncent.sso.controller.UserController - Total: 160
