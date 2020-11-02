@@ -36,4 +36,6 @@ public interface UserMapper {
 	public int updateUserPwd();
 	
 	public String getLevelByCoreDept(String core,String dept);
+	
+	public int isExist(UserVO user);
 }

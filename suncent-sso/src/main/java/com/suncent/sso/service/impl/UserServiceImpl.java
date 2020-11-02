@@ -59,6 +59,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserVO queryUser(UserVO user) {
+		String pwd = user.getPwd();
+		user.setPwd(MD5Utils.MD5(pwd));
 		return userMapper.queryUser(user);
 	}
 
@@ -72,6 +74,12 @@ public class UserServiceImpl implements UserService {
 	public int updateUserPwd() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public boolean isExist(UserVO user) {
+		int res = userMapper.isExist(user);
+		return res>0?true:false;
 	}
 
 }

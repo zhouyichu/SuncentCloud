@@ -31,5 +31,7 @@ public interface UserService {
 	
 	public UserVO checkUser(String account,String pwd);
 	
+	public boolean isExist(UserVO user);
+	
 	public int updateUserPwd();
 }

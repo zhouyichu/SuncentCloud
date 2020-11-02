@@ -11,6 +11,15 @@
             <if test="name != null and name != ''">
                 AND user_name = #{name}
             </if>
+            <if test="account != null and account != ''">
+                AND user_account = #{account}
+            </if>
+            <if test="phone != null and phone != ''">
+                AND phone = #{phone}
+            </if>
+            <if test="email != null and email != ''">
+                AND email = #{email}
+            </if>
             <if test="pwd != null and pwd != ''">
                 AND user_pwd = #{pwd}
             </if>
@@ -21,6 +30,21 @@
         <include refid="baseField"></include>
         <where>
         	user_name = #{name} AND user_pwd = #{pwd}
+        </where>
+    </select>
+    
+    <select id="isExist" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM suncent_users
+        <where>
+            <if test="account != null and account != ''">
+                user_account = #{account}
+            </if>
+            <if test="phone != null and phone != ''">
+                AND phone = #{phone}
+            </if>
+            <if test="email != null and email != ''">
+                AND email = #{email}
+            </if>
         </where>
     </select>
 
