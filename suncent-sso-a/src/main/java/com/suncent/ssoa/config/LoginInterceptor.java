@@ -67,10 +67,14 @@ public class LoginInterceptor implements HandlerInterceptor {
 					log.info("Get user info: "+userStr);
 					if(StringUtils.isEmpty(userStr)) {
 						//TODO 如何跳转到登录页
+					}else {
+						//TODO 设置session或者其他
 					}
 					return true;
 				}
 			}
+		}else {
+			//TODO 跳转登录页
 		}
 		return false;
 	}
