@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suncent.sso.mapper.DomainMapper">
+    <select id="getAll" resultType="com.suncent.sso.vo.DomainVO">
+        SELECT
+			id as id,
+			dm_name as name,
+			dm_url as url,
+			dm_desc as desc,
+			ctime as ctime,
+			mtime as mtime,
+			remark as remark 
+		FROM
+			suncent_domain_info
+    </select>
+</mapper>

@@ -64,19 +64,16 @@ public class LoginInterceptor implements HandlerInterceptor {
 					String userStr = getHttpApi().doGet("http://localhost:8080/suncent-sso/user/checkToken?wlId="+wlId);
 					log.info("Get user info: "+userStr);
 					if(StringUtils.isEmpty(userStr)) {
-						response.sendRedirect("http://localhost:8080/suncent-sso/user/test");
+						response.sendRedirect("http://localhost:8080/suncent-sso/user/test?returnUrl="+request.getRequestURL());
 						return false;
 					}else {
 						request.getSession().setAttribute("user", userStr);
 						return true;
 					}
-				}else {
-					response.sendRedirect("http://localhost:8080/suncent-sso/user/test");
-					return false;
 				}
 			}
 		}else {
-			response.sendRedirect("http://localhost:8080/suncent-sso/user/test");
+			response.sendRedirect("http://localhost:8080/suncent-sso/user/test?returnUrl="+request.getRequestURL());
 		}
 		return false;
 	}

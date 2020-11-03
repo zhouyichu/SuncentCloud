@@ -18,9 +18,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import com.alibaba.fastjson.JSONObject;
 import com.suncent.sso.config.RedisConfig;
 import com.suncent.sso.service.UserService;
@@ -62,8 +64,10 @@ public class UserController {
 	}
 	
 	@RequestMapping("/test")
-	public String test(HttpServletRequest request) {
+	public String test(HttpServletRequest request,Model model) {
 		log.info("Test controller!");
+		String returnUrl = request.getParameter("returnUrl");
+		model.addAttribute("returnUrl", returnUrl);
 		return "login";
 	}
 	
@@ -125,7 +129,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="checkToken",method = RequestMethod.GET)
-    public String tokenCheck (String wlId) {
+    public @ResponseBody String tokenCheck (String wlId) {
 		String user = null;
 		if(StringUtils.isEmpty(wlId)) {
 			return null;
