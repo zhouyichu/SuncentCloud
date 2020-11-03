@@ -13,6 +13,22 @@ spring:
             max-idle: 10
             min-idle: 0
         timeout: 1000
+#ftl配置
+#设定ftl文件路径
+    springfreemarker:
+        template-loader-path: classpath:/templates
+    freemarker:
+        request-context-attribute: request
+#httpclient
+http:
+    maxTotal: 100
+    defaultMaxPerRoute: 20
+    connectTimeout: 1000
+    connectionRequestTimeout: 500
+    socketTimeout: 10000
+    staleConnectionCheckEnabled: true
+    
+    
 server:
     servlet:
         context-path: /suncent-sso-b

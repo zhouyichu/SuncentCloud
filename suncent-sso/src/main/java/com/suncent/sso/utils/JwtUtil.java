@@ -9,7 +9,7 @@
 */  
 package com.suncent.sso.utils;
 
-import java.util.Date;
+//import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,7 +26,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
  */
 public class JwtUtil {
 	//过期时间
-    private static final long EXPIRE_TIME = 15 * 60 * 1000;
+//    private static final long EXPIRE_TIME = 15 * 60 * 1000 * 2;//半个小时过期
     //私钥
     private static final String TOKEN_SECRET = "SuncentMS_996";
     
@@ -38,7 +38,7 @@ public class JwtUtil {
     public static String sign(String token) {
         try {
             // 设置过期时间
-            Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
+//            Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
             // 私钥和加密算法
             Algorithm algorithm = Algorithm.HMAC256(TOKEN_SECRET);
             // 设置头部信息
@@ -49,7 +49,7 @@ public class JwtUtil {
             return JWT.create()
                     .withHeader(header)
                     .withClaim("token", token)
-                    .withExpiresAt(date)
+//                    .withExpiresAt(date)
                     .sign(algorithm);
         } catch (Exception e) {
             e.printStackTrace();

@@ -17,11 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.alibaba.fastjson.JSONObject;
 import com.suncent.sso.config.RedisConfig;
 import com.suncent.sso.service.UserService;
@@ -30,7 +29,6 @@ import com.suncent.sso.utils.JwtUtil;
 import com.suncent.sso.utils.ResponseInfo;
 import com.suncent.sso.utils.ResultUtil;
 import com.suncent.sso.vo.UserVO;
-
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
@@ -40,7 +38,7 @@ import redis.clients.jedis.JedisPool;
  * @author ZhouFei
  * @date 2020年10月30日 下午2:35:24
  */
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UserController {
 	private static final Logger log = LoggerFactory.getLogger(UserController.class);
@@ -63,10 +61,10 @@ public class UserController {
 		}
 	}
 	
-	@RequestMapping(value = "/test",method = RequestMethod.POST)
-	public ResponseInfo<?> test(HttpServletRequest request) {
+	@RequestMapping("/test")
+	public String test(HttpServletRequest request) {
 		log.info("Test controller!");
-		return ResultUtil.success();
+		return "login";
 	}
 	
 	@RequestMapping(value="/login",method = {RequestMethod.POST,RequestMethod.GET})
@@ -108,7 +106,7 @@ public class UserController {
 			Jedis jedis = jedisPool.getResource();
 			JSONObject jo = (JSONObject) JSONObject.toJSON(user);
 			jedis.set(token, jo.toJSONString());
-			jedis.expire(token,1800);
+			jedis.expire(token,1800);//半小时过期
 			log.info("token remaining time: "+jedis.ttl(token));
 		}
 		//	签名设置到Cookie

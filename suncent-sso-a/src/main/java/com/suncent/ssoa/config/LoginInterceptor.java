@@ -12,7 +12,6 @@ package com.suncent.ssoa.config;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +22,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-
 import com.suncent.ssoa.util.HttpAPI;
 
 /**  
@@ -66,15 +64,19 @@ public class LoginInterceptor implements HandlerInterceptor {
 					String userStr = getHttpApi().doGet("http://localhost:8080/suncent-sso/user/checkToken?wlId="+wlId);
 					log.info("Get user info: "+userStr);
 					if(StringUtils.isEmpty(userStr)) {
-						//TODO 如何跳转到登录页
+						response.sendRedirect("http://localhost:8080/suncent-sso/user/test");
+						return false;
 					}else {
-						//TODO 设置session或者其他
+						request.getSession().setAttribute("user", userStr);
+						return true;
 					}
-					return true;
+				}else {
+					response.sendRedirect("http://localhost:8080/suncent-sso/user/test");
+					return false;
 				}
 			}
 		}else {
-			//TODO 跳转登录页
+			response.sendRedirect("http://localhost:8080/suncent-sso/user/test");
 		}
 		return false;
 	}
