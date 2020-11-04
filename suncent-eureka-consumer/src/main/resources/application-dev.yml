@@ -1,0 +1,17 @@
+spring:
+    application:
+        name: eureka-consumer
+server:
+    servlet:
+        context-path: /eureka-consumer
+    port: 8003
+eureka:
+    server:
+        enableSelfPreservation: false
+    instance:
+        hostname: eureka-consumer
+        prefer-ip-address: true
+        id-address: 127.0.0.1
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8001/eureka/
