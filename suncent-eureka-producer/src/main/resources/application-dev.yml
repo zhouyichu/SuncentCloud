@@ -1,0 +1,15 @@
+spring:
+    application:
+        name: eureka-producer
+server:
+    port: 8002
+eureka:
+    server:
+        enableSelfPreservation: false
+    instance:
+        hostname: eureka-producer
+        prefer-ip-address: true
+        id-address: 127.0.0.1
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8001/eureka/
