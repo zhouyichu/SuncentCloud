@@ -25,9 +25,6 @@ http:
     connectionRequestTimeout: 500
     socketTimeout: 10000
     staleConnectionCheckEnabled: true
-
-
-
 server:
     servlet:
         context-path: /suncent-sso-a
