@@ -29,7 +29,12 @@
     <select id="checkUser" resultType="com.suncent.sso.vo.UserVO">
         <include refid="baseField"></include>
         <where>
-        	user_name = #{name} AND user_pwd = #{pwd}
+        	<if test="account != null and account !=''">
+        		phone = #{account} or email = #{account}
+        	</if>
+        	<if test="pwd != null and pwd !=''">
+        		AND user_pwd = #{pwd}
+        	</if>
         </where>
     </select>
     

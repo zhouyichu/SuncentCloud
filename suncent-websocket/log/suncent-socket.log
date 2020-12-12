@@ -1,0 +1,64 @@
+14:37:50.649 [main] INFO  com.suncent.websocket.WebSocketApplication - Starting WebSocketApplication on CY-20160101AZON with PID 9972 (D:\WorkSpace\suncent-websocket\target\classes started by Administrator in D:\WorkSpace\suncent-websocket)
+14:37:50.654 [main] INFO  com.suncent.websocket.WebSocketApplication - The following profiles are active: dev
+14:37:51.701 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:37:51.713 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:37:51.713 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+14:37:51.865 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-socket] - Initializing Spring embedded WebApplicationContext
+14:37:52.224 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+14:37:52.466 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:37:52.507 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+14:37:52.513 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+14:39:06.780 [main] INFO  com.suncent.websocket.WebSocketApplication - Starting WebSocketApplication on CY-20160101AZON with PID 7648 (D:\WorkSpace\suncent-websocket\target\classes started by Administrator in D:\WorkSpace\suncent-websocket)
+14:39:06.789 [main] INFO  com.suncent.websocket.WebSocketApplication - The following profiles are active: dev
+14:39:08.670 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:39:08.680 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:39:08.681 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+14:39:08.823 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-socket] - Initializing Spring embedded WebApplicationContext
+14:39:09.341 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+14:39:09.699 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:39:09.873 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+14:39:09.876 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+14:39:41.294 [main] INFO  com.suncent.websocket.WebSocketApplication - Starting WebSocketApplication on CY-20160101AZON with PID 8748 (D:\WorkSpace\suncent-websocket\target\classes started by Administrator in D:\WorkSpace\suncent-websocket)
+14:39:41.297 [main] INFO  com.suncent.websocket.WebSocketApplication - The following profiles are active: dev
+14:39:42.294 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:39:42.304 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:39:42.304 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+14:39:42.450 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-socket] - Initializing Spring embedded WebApplicationContext
+14:39:42.794 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+14:39:43.034 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:39:43.284 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:39:43.317 [main] INFO  com.suncent.websocket.WebSocketApplication - Started WebSocketApplication in 2.408 seconds (JVM running for 2.905)
+14:40:13.564 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-socket] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:14:00.704 [main] INFO  com.suncent.websocket.WebSocketApplication - Starting WebSocketApplication on CY-20160101AZON with PID 9040 (D:\WorkSpace\suncent-websocket\target\classes started by Administrator in D:\WorkSpace\suncent-websocket)
+17:14:00.708 [main] INFO  com.suncent.websocket.WebSocketApplication - The following profiles are active: dev
+17:14:01.770 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:14:01.782 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:14:01.782 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+17:14:01.930 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-socket] - Initializing Spring embedded WebApplicationContext
+17:14:02.309 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+17:14:02.543 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:14:02.807 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:14:02.829 [main] INFO  com.suncent.websocket.WebSocketApplication - Started WebSocketApplication in 2.54 seconds (JVM running for 3.041)
+17:14:07.050 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-socket] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:14:00.929 [main] INFO  com.suncent.websocket.WebSocketApplication - Starting WebSocketApplication on CY-20160101AZON with PID 9968 (D:\WorkSpace\suncent-websocket\target\classes started by Administrator in D:\WorkSpace\suncent-websocket)
+18:14:00.934 [main] INFO  com.suncent.websocket.WebSocketApplication - The following profiles are active: dev
+18:14:01.993 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+18:14:02.002 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+18:14:02.002 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+18:14:02.159 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-socket] - Initializing Spring embedded WebApplicationContext
+18:14:02.489 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+18:14:02.716 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+18:14:02.985 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+18:14:03.006 [main] INFO  com.suncent.websocket.WebSocketApplication - Started WebSocketApplication in 2.451 seconds (JVM running for 2.946)
+18:14:11.934 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-socket] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:25:26.521 [main] INFO  com.suncent.websocket.WebSocketApplication - Starting WebSocketApplication on CY-20160101AZON with PID 7896 (D:\WorkSpace\suncent-websocket\target\classes started by Administrator in D:\WorkSpace\suncent-websocket)
+18:25:26.525 [main] INFO  com.suncent.websocket.WebSocketApplication - The following profiles are active: dev
+18:25:27.557 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+18:25:27.565 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+18:25:27.566 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+18:25:27.720 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-socket] - Initializing Spring embedded WebApplicationContext
+18:25:28.070 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+18:25:28.323 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+18:25:28.586 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+18:25:28.607 [main] INFO  com.suncent.websocket.WebSocketApplication - Started WebSocketApplication in 2.454 seconds (JVM running for 2.945)
+18:25:32.523 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/suncent-socket] - Initializing Spring DispatcherServlet 'dispatcherServlet'

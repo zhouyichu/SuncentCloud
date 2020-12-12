@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -63,7 +64,7 @@ public class UserController {
 		}
 	}
 	
-	@RequestMapping("/test")
+	@RequestMapping(value="/test",method = {RequestMethod.GET,RequestMethod.POST})
 	public String test(HttpServletRequest request,Model model) {
 		log.info("Test controller!");
 		String returnUrl = request.getParameter("returnUrl");
@@ -71,6 +72,7 @@ public class UserController {
 		return "login";
 	}
 	
+	@CrossOrigin(allowCredentials = "true", allowedHeaders = "*")
 	@RequestMapping(value="/login",method = {RequestMethod.POST,RequestMethod.GET})
 	public ResponseInfo<?> login(HttpServletRequest request,HttpServletResponse response) {
 		String account = request.getParameter("account");

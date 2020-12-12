@@ -1,0 +1,35 @@
+.main-body{
+	width:800px;
+	margin:0px auto;
+	margin-top:25px;
+}
+.inbox .inbox-body{
+	padding: 20px;
+    border: 1px solid #e7ecf1;
+	min-height:450px;
+}
+.form-horizontal{
+	margin-top:20px;
+}
+.nick{
+	font-weight:700;
+	font-size:16px;
+	color:#3598dc;
+}
+.msg{
+	padding:15px;
+	border:2px solid #36c6d3;
+	border-radius: 15px;
+}
+.msg-item{
+	line-height:60px;
+}
+.msg-item .msg{
+	margin-left:15px;
+}
+.msg-self{
+	text-align: right;
+}
+.msg-self .msg{
+	margin-right:15px;
+}
