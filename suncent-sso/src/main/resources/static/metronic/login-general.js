@@ -23,7 +23,7 @@ var KTLogin=function(){
 								message:"请输入有效邮箱或手机号"
 							},
 							remote: {
-								url: "../validate/checkAccount",
+								url: "validate/checkAccount",
 								message: '账号不存在，请检查后重输',
 								delay: 1000,
 								type: 'POST'
@@ -62,32 +62,36 @@ var KTLogin=function(){
 								param.pwd = password;
 								param.returnUrl = returnUrl;
 								$.ajax({
-									url:"login",
+									url:"user/login",
 									data:param,
 									async:false,
 									type:"post",
 									dataType:"json",
 									success:function(data){
-										console.log(data);
+										if(data.code=="200"){
+											param.phone=param.phone == undefined?"":param.phone;
+											param.email=param.email == undefined?"":param.email;
+											var returnUrl = encodeURI("auth/checkAuth?phone="+param.phone+"&email="+param.email+"&pwd="+param.pwd+"&returnUrl="+param.returnUrl);
+											window.location.href = returnUrl;
+										}else{
+											swal.fire({
+												text:"登录失败："+data.msg+" "+data.data,
+												icon:"error",
+												buttonsStyling:!1,
+												confirmButtonText:"确定",
+												customClass:{confirmButton:"btn font-weight-bold btn-light-primary"}
+											});
+										}
+									},
+									error:function(data){
 										swal.fire({
-											text:"登录成功，正在为您跳转...",
-											icon:"success",
+											text:"登录失败，请稍后重试！",
+											icon:"error",
 											buttonsStyling:!1,
 											confirmButtonText:"确定",
 											customClass:{confirmButton:"btn font-weight-bold btn-light-primary"}
 										});
-									},
-									error:function(data){
-										
 									}
-								});
-							}else{
-								swal.fire({
-									text:"登录失败，请输入正确信息并重试！",
-									icon:"error",
-									buttonsStyling:!1,
-									confirmButtonText:"确定",
-									customClass:{confirmButton:"btn font-weight-bold btn-light-primary"}
 								});
 							}
 						}
@@ -104,45 +108,65 @@ var KTLogin=function(){
 				var o,n=KTUtil.getById("kt_login_signup_form");
 				o=FormValidation.formValidation(n,{
 					fields:{
-						fullname:{
+						name:{
 							validators:{
-								notEmpty:{message:"Username is required"}
+								notEmpty:{message:"请输入姓名"}
+							}
+						},
+						nameEn:{
+							validators:{
+								notEmpty:{
+									message:"请输入英文名"
+								}
+							}
+						},
+						phone:{
+							validators:{
+								notEmpty:{message:"请输入电话号码"}
 							}
 						},
 						email:{
 							validators:{
-								notEmpty:{
-									message:"Email address is required"
-								},
+								notEmpty:{message:"请输入邮箱地址"},
 								emailAddress:{
-									message:"The value is not a valid email address"
+									message:"请输入有效邮箱地址"
 								}
+							}
+						},
+						core:{
+							validators:{
+								notEmpty:{message:"请选择一级部门"}
+							}
+						},
+						dept:{
+							validators:{
+								notEmpty:{message:"请选择二级部门"}
 							}
 						},
 						password:{
 							validators:{
 								notEmpty:{
-									message:"The password is required"
+									message:"请输入密码"
 								}
 							}
 						},
 						cpassword:{
 							validators:{
 								notEmpty:{
-									message:"The password confirmation is required"
+									message:"请再次输入密码"
 								},
 								identical:{
 									compare:function(){
 										return n.querySelector('[name="password"]').value
 									},
-									message:"The password and its confirm are not the same"
+									message:"两次密码输入不一致"
 								}
 							}
 						},
 						agree:{
 							validators:{
 								notEmpty:{
-									message:"You must accept the terms and conditions"
+									message:"请勾选同意"
 								}
 							}
 						}
@@ -157,19 +181,22 @@ var KTLogin=function(){
 					t.preventDefault(),
 					o.validate().then((
 						function(t){
-							"Valid"==t?swal.fire({
-								text:"恭喜，注册成功！",
-								icon:"success",
-								buttonsStyling:!1,
-								confirmButtonText:"确定",
-								customClass:{confirmButton:"btn font-weight-bold btn-light-primary"}
-							}).then((function(){KTUtil.scrollTop()})):swal.fire({
-								text:"信息有误，注册失败。请重试！",
-								icon:"error",
-								buttonsStyling:!1,
-								confirmButtonText:"确定",
-								customClass:{confirmButton:"btn font-weight-bold btn-light-primary"}
-							}).then((function(){KTUtil.scrollTop()}))
+//							"Valid"==t?swal.fire({
+//								text:"恭喜，注册成功！",
+//								icon:"success",
+//								buttonsStyling:!1,
+//								confirmButtonText:"确定",
+//								customClass:{confirmButton:"btn font-weight-bold btn-light-primary"}
+//							}).then((function(){KTUtil.scrollTop()})):swal.fire({
+//								text:"信息有误，注册失败。请重试！",
+//								icon:"error",
+//								buttonsStyling:!1,
+//								confirmButtonText:"确定",
+//								customClass:{confirmButton:"btn font-weight-bold btn-light-primary"}
+//							}).then((function(){KTUtil.scrollTop()}))
+							if("Valid"==t){
+								//TODO //校验通过后，根据sweetAlert2弹框做验证码功能
+							}
 						})
 					)
 			})),

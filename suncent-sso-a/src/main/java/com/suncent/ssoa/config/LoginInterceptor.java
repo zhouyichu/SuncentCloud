@@ -12,8 +12,6 @@ package com.suncent.ssoa.config;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
@@ -34,7 +32,6 @@ import com.suncent.ssoa.util.HttpAPI;
 public class LoginInterceptor implements HandlerInterceptor {
 	private LoginInterceptor loginInterceptor;
 	private HttpAPI httpApi;
-	private static final Logger log = LoggerFactory.getLogger(LoginInterceptor.class);
 
 	@Bean
 	public LoginInterceptor getLoginInterceptor() {
@@ -59,12 +56,10 @@ public class LoginInterceptor implements HandlerInterceptor {
 		if(cookies != null && cookies.length >0) {
 			for (Cookie cookie : cookies) {
 				if("tokenId".equals(cookie.getName())) {
-					log.info("sso-a: cookie exist, begin check...");
 					String wlId = cookie.getValue();
-					String userStr = getHttpApi().doGet("http://localhost:8080/suncent-sso/user/checkToken?wlId="+wlId);
-					log.info("Get user info: "+userStr);
+					String userStr = getHttpApi().doGet("http://localhost:8080/suncent-sso/auth/checkToken?wlId="+wlId);
 					if(StringUtils.isEmpty(userStr)) {
-						response.sendRedirect("http://localhost:8080/suncent-sso/user/test?returnUrl="+request.getRequestURL());
+						response.sendRedirect("http://localhost:8080/suncent-sso/auth?returnUrl="+request.getRequestURL());
 						return false;
 					}else {
 						request.getSession().setAttribute("user", userStr);
@@ -73,7 +68,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 				}
 			}
 		}else {
-			response.sendRedirect("http://localhost:8080/suncent-sso/user/test?returnUrl="+request.getRequestURL());
+			response.sendRedirect("http://localhost:8080/suncent-sso/auth?returnUrl="+request.getRequestURL());
 		}
 		return false;
 	}

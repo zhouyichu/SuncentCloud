@@ -1,25 +1,31 @@
 /**  
-* <p>Title: DomainMapper.java</p>  
+* <p>Title: InfoMapper.java</p>  
 * <p>Description: </p>  
 * <p>Copyright: Copyright (c) 2017</p>  
 * <p>Company: www.suncnet.top</p>  
 * @author ZhouFei  
-* @date 2020年11月3日  
+* @date 2020年12月14日  
 * @version 1.0  
 */  
 package com.suncent.sso.mapper;
 
 import java.util.List;
+
 import org.springframework.stereotype.Repository;
-import com.suncent.sso.vo.DomainVO;
+
+import com.suncent.sso.vo.CoreVO;
+import com.suncent.sso.vo.DeptVO;
 
 /**  
- * <p>Title: DomainMapper</p>  
+ * <p>Title: InfoMapper</p>  
  * <p>Description: </p>  
  * @author ZhouFei
- * @date 2020年11月3日 下午3:32:26
+ * @date 2020年12月14日 下午4:11:56
  */
 @Repository
-public interface DomainMapper {
-	public List<DomainVO> getAll();
+public interface InfoMapper {
+
+	public List<DeptVO>	deptList();
+	
+	public List<CoreVO> coreList();
 }

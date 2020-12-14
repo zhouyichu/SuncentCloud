@@ -61,18 +61,50 @@
 						<!--begin::Login Sign up form-->
 						<div class="login-signup">
 							<div class="mb-20">
-								<h3>账号注册</h3>
+								<h3>欢迎注册Toubosi</h3>
 							</div>
 							<form class="form fv-plugins-bootstrap fv-plugins-framework" id="kt_login_signup_form">
 								<div class="form-group mb-5 fv-plugins-icon-container">
-									<input class="form-control h-auto form-control-solid py-4 px-8" type="text" placeholder="Fullname" name="fullname">
+									<input class="form-control h-auto form-control-solid py-4 px-8" type="text" placeholder="姓名" name="name">
+								</div>
+								<div class="form-group mb-5 fv-plugins-icon-container">
+									<input class="form-control h-auto form-control-solid py-4 px-8" type="text" placeholder="英文名" name="nameEn">
+								</div>
+								<div class="form-group mb-5 fv-plugins-icon-container">
+									<input class="form-control h-auto form-control-solid py-4 px-8" type="text" placeholder="电话" name="phone">
+								</div>
+								<div class="form-group mb-5 fv-plugins-icon-container">
+									<input class="form-control h-auto form-control-solid py-4 px-8" type="text" placeholder="邮箱" name="email">
+								</div>
+								<div class="form-group mb-5 fv-plugins-icon-container">
+									<select class="form-control h-auto form-control-solid py-4 px-8" placeholder="一级部门" name="core">
+										<option value="">一级部门</option>
+										<#list core as c>
+										<option value="${c.id}">${c.core}</option>
+										</#list>
+									</select>
+								</div>
+								<div class="form-group mb-5 fv-plugins-icon-container">
+									<select class="form-control h-auto form-control-solid py-4 px-8" placeholder="二级部门" name="dept">
+										<option value="">二级部门</option>
+										<#list dept as d>
+										<option value="${d.id}">${d.dept}</option>
+										</#list>
+									</select>
+								</div>
+								<div class="form-group mb-5 fv-plugins-icon-container">
+									<input class="form-control h-auto form-control-solid py-4 px-8" type="password" placeholder="密码" name="password">
+								</div>
+								<div class="form-group mb-5 fv-plugins-icon-container">
+									<input class="form-control h-auto form-control-solid py-4 px-8" type="password" placeholder="再次输入密码" name="cpassword">
 								</div>
 								<div class="form-group mb-5 text-left fv-plugins-icon-container">
 									<div class="checkbox-inline">
 										<label class="checkbox m-0">
 											<input type="checkbox" name="agree">
 											<span></span>我同意
-											<a href="#" class="font-weight-bold ml-1">隐私政策</a>
+											<a href="#" class="font-weight-bold ml-1 mr-1">服务政策</a>和
+											<a href="#" class="font-weight-bold ml-1">隐私声明</a>
 										</label>
 									</div>
 								</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suncent.sso.mapper.InfoMapper">
+	<select id="deptList" resultType="com.suncent.sso.vo.DeptVO">
+		select id,dept_name as dept from suncent_level_dept
+	</select>
+	
+	<select id="coreList" resultType="com.suncent.sso.vo.CoreVO">
+		select id,core_name as core from suncent_level_core
+	</select>
+</mapper>

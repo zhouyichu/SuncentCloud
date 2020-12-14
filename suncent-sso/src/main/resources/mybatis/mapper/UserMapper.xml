@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.suncent.sso.mapper.UserMapper">
     <select id="queryUser" resultType="com.suncent.sso.vo.UserVO">
-        <include refid="baseField"></include>
+        <include refid="userinfo"></include>
         <where>
             <if test="userId != null and userId != ''">
                 user_id = #{userId}
@@ -105,5 +105,28 @@
 			mtime as mtime 
 		FROM
 			suncent_users
+    </sql>
+    
+    <sql id="userinfo">
+        SELECT
+			u.user_id as userId,
+			u.user_role as roleId,
+			u.user_account as account,
+			u.user_pwd as pwd,
+			u.user_name as name,
+			u.user_name_en as nameEn,
+			u.phone as phone,
+			u.email as email,
+			u.level_id as level,
+			u.title as title,
+			u.intro as intro,
+			u.ctime as ctime,
+			u.mtime as mtime,
+			d.dept_name as dept,
+			c.core_name as core
+		FROM
+			suncent_users u left join suncent_level_base b on u.level_id = b.id 
+			left join suncent_level_dept d on d.id = b.dept_id
+			left join suncent_level_core c on c.id = b.core_id
     </sql>
 </mapper>
